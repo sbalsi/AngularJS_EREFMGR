@@ -19,14 +19,15 @@
         <input type="text" class="form-control" ng-model="user.fromDate" data-max-date="{{user.untilDate}}" placeholder="From" bs-datepicker>
         <input type="text" class= "form-control" ng-model="user.untilDate" data-min-date="{{user.fromDate}}" placeholder="Until" bs-datepicker>
         Functions:
-
-        <select class="form-control" ng-model="user.function" ng-controller="userFunctionCtrl">
+        <!--<select class="form-control" ng-model="user.function" ng-controller="userFunctionCtrl">
             <option ng-repeat="function in functions | orderBy:orderProp"> {{function.name}}</option>
         </select>
 
         <select ng-model="orderProp">
             <option value="name">Alphabetical</option>
-        </select>
+        </select>-->
+
+
 
         <br/>
 
