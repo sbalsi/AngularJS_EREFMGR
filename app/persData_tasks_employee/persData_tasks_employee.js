@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap'])
+angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap', 'ui.multiselect'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/persData_tasks_employee', {
@@ -15,6 +15,7 @@ angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap'])
       $scope.update = function(user) {
         $scope.master = angular.copy(user);
       };
+
 
       $scope.reset = function() {
         $scope.user = angular.copy($scope.master);
@@ -46,12 +47,21 @@ angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap'])
         };
     })
 
-    .controller('userFunctionCtrl', ['$scope', function($scope) {
-        $scope.functions =[
-            {'name': 'Function 1'},
-            {'name': 'Function 2'}
-        ]
+
+    .controller('functionCtrl', ['$scope', function($scope){
+        $scope.functions = [{id:1, name: 'Function 1'}, {id:2, name: 'Function 2'}, {id:3, name: 'Function 3'}];
+        $scope.selectedFunction = [];
+
+        $scope.addFunction = function(){
+            $scope.functions.push({name: $scope.newFunction.name})
+        }
     }])
+
+    .controller('departmentCtrl', function($scope) {
+        $scope.departments = [{name: 'Department 1'}, {name: 'Department 2'}, {name: 'Department 3'}];
+
+
+    })
 
 ;
 

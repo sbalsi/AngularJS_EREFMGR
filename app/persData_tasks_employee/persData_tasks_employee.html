@@ -19,18 +19,27 @@
         <input type="text" class="form-control" ng-model="user.fromDate" data-max-date="{{user.untilDate}}" placeholder="From" bs-datepicker>
         <input type="text" class= "form-control" ng-model="user.untilDate" data-min-date="{{user.fromDate}}" placeholder="Until" bs-datepicker>
         Functions:
-        <!--<select class="form-control" ng-model="user.function" ng-controller="userFunctionCtrl">
-            <option ng-repeat="function in functions | orderBy:orderProp"> {{function.name}}</option>
-        </select>
+        <div ng-controller="functionCtrl">
+            <multiselect class="input-lg" multiple="true" ms-selected ="There are {{selectedFunction.length}} functions(s) selected"
+                         ng-model="selectedFunction" ms-header="Select Functions"
+                         options="c.name for c in functions"
+                         change="selected()"></multiselect>
 
-        <select ng-model="orderProp">
-            <option value="name">Alphabetical</option>
-        </select>-->
+            <input type="text" ng-model="newFunction.name"/>
+            <button ng-click="addFunction()">Add Function</button>
 
-
-
+            <div class="well well-sm">
+            {{selectedFunction}}
+            </div>
+        </div>
         <br/>
 
+        Departments:
+        <select class="form-control" ng-controller="departmentCtrl" ng-model="user.department" convert-to-number>
+            <option ng-repeat="department in departments">{{department.name}}</option>
+        </select><br/>
+
+        Work quota
 
 
 

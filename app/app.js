@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.persData_tasks_employee',
   'myApp.view2',
   'myApp.view3',
-  'myApp.version'
+  'myApp.version',
+  'ui.multiselect'
 
 ]).
 config(['$routeProvider', function($routeProvider) {
