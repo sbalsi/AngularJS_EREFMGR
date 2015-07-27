@@ -1,0 +1,43 @@
+<h2>Personal Data</h2>
+
+<div ng-controller="personalDataCtrl">
+    <form novalidate class="simple-form">
+        Title:
+        <select class="form-control" ng-model="user.title">
+            <option value="Interim Employment Reference">Interim Employment Reference</option>
+            <option value="Employment Reference">Employment Reference</option>
+            <option value="Internship reference">Internship reference</option>
+            <option value="Apprenticeship certificate">Apprenticeship certificate</option>
+            <option value="Evidence of employment">Evidence of employment</option>
+        </select><br/>
+        Last Name: <input type="text" class="form-control" ng-model="user.lastName" /><br/>
+        First Name: <input type="text" class="form-control" ng-model="user.firstName"/><br/>
+        E-mail: <input type="email" class="form-control" ng-model="user.email" /><br />
+        Gender: <input type="radio" ng-model="user.gender" value="male" />male
+                <input type="radio" ng-model="user.gender" value="female" />female<br />
+        Employment duration:
+        <input type="text" class="form-control" ng-model="user.fromDate" data-max-date="{{user.untilDate}}" placeholder="From" bs-datepicker>
+        <input type="text" class= "form-control" ng-model="user.untilDate" data-min-date="{{user.fromDate}}" placeholder="Until" bs-datepicker>
+        Functions:
+
+        <select class="form-control" ng-model="user.function" ng-controller="userFunctionCtrl">
+            <option ng-repeat="function in functions | orderBy:orderProp"> {{function.name}}</option>
+        </select>
+
+        <select ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+        </select>
+
+        <br/>
+
+
+
+
+        <input type="submit" class="btn btn-default" ng-click="update(user)" value="Save" />
+
+    </form>
+
+    <pre>form = {{user | json}}</pre>
+    <pre>master = {{master | json}}</pre>
+</div>
+
