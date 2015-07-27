@@ -15,18 +15,46 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+
+
+  <body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Employment Reference Manager</h1>
+    </div>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="nav">
+          <ul class="menu_items">
+            <li>
+              <a href="#view1"> Create EREF</a>
+              <a href="#view2"> Tasks</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <div class="section">
+          <div ng-view></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="footer">
+
+    </div>
+  </div>
+
+  </body>
+</html>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
