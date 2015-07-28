@@ -13,6 +13,7 @@
 }
 
 #sidebar-wrapper {
+
   z-index: 1000;
   position: fixed;
   left: 250px;
@@ -20,7 +21,7 @@
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #00CC99;
+  background: #009999;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -133,7 +134,7 @@
   }
   /* Table inbox styling */
   th {
-    background-color: #00CC99;
+    background-color: #009999;
     color: #293D3D;
   }
 }

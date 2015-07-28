@@ -1,0 +1,29 @@
+<h2>Development and professional expertise</h2>
+<div ng-controller="performanceCtrl">
+    <form novalidate class="simple-form">
+
+        Existing and acquired professional :
+        <textarea class="form-control" rows="3" ng-model="user.functionDesription"></textarea>
+
+        List of tasks:
+        <textarea class="form-control" rows="3" ng-model="user.tasksList"></textarea>
+
+        Comments:
+        <textarea class="form-control" rows="3" ng-model="user.tasks_comment"></textarea>
+
+        <div class="form-inline">
+            <input type="submit" class="btn btn-default" ng-click="update(user)" value="Save" />
+            <a class="btn btn-default" href="#inbox_view" role="button">Submit and Exit</a>
+
+        </div>
+
+
+
+    </form>
+
+    <pre>form = {{user | json}}</pre>
+    <pre>master = {{master | json}}</pre>
+
+</div>
+<h2>Assessment of performance and working method</h2>
+

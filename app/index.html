@@ -4,9 +4,9 @@
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
+  <title>Employment Reference Manager</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.css">
   <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libs.min.css">
   <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/docs.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 
 
@@ -24,19 +25,19 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.tpl.min.js"></script>
   <script src="multiselect.js"></script>
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   <script src="app.js"></script>
   <script src="persData_tasks_employee/persData_tasks_employee.js"></script>
   <script src="inbox_view/inbox_view.js"></script>
+  <script src="user_tasks_view/user_tasks_view.js"></script>
+  <script src="performance_view/performance_view.js"></script>
   <script src="view3/view3.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
 </head>
 
-
-<title>Employment Reference Manager</title>
 
 <body>
 
@@ -46,7 +47,7 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a href="#persData_tasks_employee">
+        <a href="#inbox_view">
           EREFMGR
         </a>
       </li>
