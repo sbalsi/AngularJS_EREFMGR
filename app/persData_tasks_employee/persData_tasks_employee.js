@@ -63,6 +63,12 @@ angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap', 'u
 
     })
 
+    .controller('workPlaceCtrl', function($scope) {
+        $scope.workPlaces = [{name: 'Workplace 1'}, {name: 'Workplace 2'}, {name: 'Workplace 3'}];
+
+
+    })
+
 ;
 
 

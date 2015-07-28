@@ -20,7 +20,7 @@
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #088A29;
+  background: #00CC99;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -61,7 +61,7 @@
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999;
+  color: #293D3D;
 }
 
 .sidebar-nav li a:hover {
@@ -82,7 +82,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #999999;
+  color: #293D3D;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -125,5 +125,15 @@
   multiselect .dropdown-menu > li > a {
     padding: 3px 10px;
     cursor:pointer;
+  }
+
+  /* Comment Text Box styling */
+  .commentBox{
+    height: 400px;
+  }
+  /* Table inbox styling */
+  th {
+    background-color: #00CC99;
+    color: #293D3D;
   }
 }

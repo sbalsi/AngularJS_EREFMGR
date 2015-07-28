@@ -5,7 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'mgcrea.ngStrap',
   'myApp.persData_tasks_employee',
-  'myApp.view2',
+  'myApp.inbox_view',
   'myApp.view3',
   'myApp.version',
   'ui.multiselect'
