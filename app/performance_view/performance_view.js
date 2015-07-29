@@ -31,7 +31,10 @@ angular.module('myApp.performance_view', ['ngRoute'])
           {skill_id: 6, label: 'Exact', chapter: "diligence_reliability", ratingChecked: false},
           {skill_id: 7, label: 'Careful', chapter: "diligence_reliability", ratingChecked: false},
           {skill_id: 8, label: 'Reliable', chapter: "diligence_reliability", ratingChecked: false},
-          {skill_id: 9, label: 'Respect deadlines', chapter: "diligence_reliability", ratingChecked: false}
+          {skill_id: 9, label: 'Respect deadlines', chapter: "diligence_reliability", ratingChecked: false},
+          {skill_id: 10, label: 'Productive', chapter: "productivity_creativity", ratingChecked: false},
+          {skill_id: 11, label: 'Efficient', chapter: "productivity_creativity", ratingChecked: false},
+          {skill_id: 12, label: 'Creative', chapter: "productivity_creativity", ratingChecked: false}
         ];
 
 

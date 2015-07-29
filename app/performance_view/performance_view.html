@@ -25,7 +25,6 @@
 <div class="row">
     <h3>Diligence and reliability</h3>
 </div>
-
 <div class="row" ng-controller="performanceCtrl">
     <div class="col-md-6">
         <ul class="list-unstyled" ng-controller="skillsCtrl">
@@ -43,12 +42,11 @@
                         <td>{{skill.label}}</td>
                         <td><input type="checkbox" ng-model="skill.ratingChecked"></td>
                         <td>
-                            <div id="radio_rating" ng-show="skill.ratingChecked">
+                            <div ng-show="skill.ratingChecked">
                                 - <input type="radio" ng-model="radioRatingModel.rating" value="0">
                                 + <input type="radio" ng-model="radioRatingModel.rating" value="1">
                                 ++ <input type="radio" ng-model="radioRatingModel.rating" value="2">
                             </div>
-
                         </td>
                     </tr>
                     </tbody>
@@ -56,14 +54,48 @@
 
             </li>
         </ul>
-
-
     </div>
-
     <div class="col-md-6">
         <textarea class="form-control" rows="8" ng-model="freetext_rating" placeholder="Rating" style="margin-top: 35px"></textarea>
     </div>
+</div>
 
+<div class="row">
+    <h3>Productivity and creativity</h3>
+</div>
+<div class="row" ng-controller="performanceCtrl">
+    <div class="col-md-6">
+        <ul class="list-unstyled" ng-controller="skillsCtrl">
+            <li>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <td class="col-md-1">Attribute</td>
+                        <td class="col-md-1">Check for rating</td>
+                        <td class="col-md-1">Rating</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="skill in skills" ng-if="skill.chapter=='productivity_creativity'">
+                        <td>{{skill.label}}</td>
+                        <td><input type="checkbox" ng-model="skill.ratingChecked"></td>
+                        <td>
+                            <div ng-show="skill.ratingChecked">
+                                - <input type="radio" ng-model="radioRatingModel.rating" value="0">
+                                + <input type="radio" ng-model="radioRatingModel.rating" value="1">
+                                ++ <input type="radio" ng-model="radioRatingModel.rating" value="2">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <textarea class="form-control" rows="8" ng-model="freetext_rating" placeholder="Rating" style="margin-top: 35px"></textarea>
+    </div>
 </div>
 
 
