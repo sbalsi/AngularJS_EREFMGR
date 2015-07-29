@@ -2,20 +2,20 @@
 <div ng-controller="performanceCtrl">
     <form novalidate class="simple-form">
 
-        Existing and acquired professional :
-        <textarea class="form-control" rows="3" ng-model="user.functionDesription"></textarea>
 
-        List of tasks:
-        <textarea class="form-control" rows="3" ng-model="user.tasksList"></textarea>
 
-        Comments:
-        <textarea class="form-control" rows="3" ng-model="user.tasks_comment"></textarea>
+        <ul class="list-unstyled" ng-controller="skillsCtrl">
+            <li ng-repeat="skill in skills">
+                <p>{{skill.label}}</p>
+                <textarea class="form-control" rows="3" ng-model="user[skill.id]"></textarea><br/>
+            </li>
+        </ul>
+
 
         <div class="form-inline">
             <input type="submit" class="btn btn-default" ng-click="update(user)" value="Save" />
             <a class="btn btn-default" href="#inbox_view" role="button">Submit and Exit</a>
-
-        </div>
+        </div><br/>
 
 
 
@@ -25,5 +25,13 @@
     <pre>master = {{master | json}}</pre>
 
 </div>
+
 <h2>Assessment of performance and working method</h2>
+<h1>Working method</h1>
+<div ng-controller="skillsCtrl"
+<h1>Performance</h1>
+
+<h2>Assessment of leadership skills</h2>
+
+<h2>Assessment of conduct</h2>
 
