@@ -1,37 +1,74 @@
-<h2>Development and professional expertise</h2>
-<div ng-controller="performanceCtrl">
-    <form novalidate class="simple-form">
+<div class="row" ng-controller="performanceCtrl">
+    <div class="col-md-12">
+        <h1>Development and professional expertise</h1>
+        <form novalidate class="simple-form">
+            <ul class="list-unstyled" ng-controller="skillsCtrl">
+                <li ng-repeat="skill in skills">
+                    <div ng-if="skill.chapter=='dev_exp'">
+                        <p>{{skill.label}}</p>
+                        <textarea class="form-control" rows="3" ng-model="user[skill.skill_id]"></textarea><br/>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
 
+<div class="row">
+    <h1>Assessment of performance and working method</h1>
+</div>
 
+<div class="row">
+    <h2>Working method</h2>
+</div>
 
-        <ul class="list-unstyled" ng-controller="skillsCtrl">
-            <li ng-repeat="skill in skills">
-                <p>{{skill.label}}</p>
-                <textarea class="form-control" rows="3" ng-model="user[skill.id]"></textarea><br/>
+<div class="row">
+    <h3>Diligence and reliability</h3>
+</div>
+
+<div class="row" ng-controller="performanceCtrl">
+    <div class="col-md-6">
+        <ul class="list-unstyled" ng-controller="evaluationCtrl">
+            <li>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <td class="col-md-1">Attribute</td>
+                        <td class="col-md-1">Check for rating</td>
+                        <td class="col-md-1">Rating</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Diligent</td>
+                        <td><input type="checkbox" ng-model="ratingCheckboxModel.value"></td>
+                        <td>
+                            <div id="radio_rating" ng-show="ratingCheckboxModel.value">
+                                - <input type="radio" ng-model="radioRatingModel.rating" value="0">
+                                + <input type="radio" ng-model="radioRatingModel.rating" value="1">
+                                ++ <input type="radio" ng-model="radioRatingModel.rating" value="2">
+                            </div>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
             </li>
         </ul>
 
 
-        <div class="form-inline">
-            <input type="submit" class="btn btn-default" ng-click="update(user)" value="Save" />
-            <a class="btn btn-default" href="#inbox_view" role="button">Submit and Exit</a>
-        </div><br/>
+    </div>
 
-
-
-    </form>
-
-    <pre>form = {{user | json}}</pre>
-    <pre>master = {{master | json}}</pre>
+    <div class="col-md-6">
+        <textarea class="form-control" rows="3" ng-model="user.comment" placeholder="Rating"></textarea>
+    </div>
 
 </div>
 
-<h2>Assessment of performance and working method</h2>
-<h1>Working method</h1>
-<div ng-controller="skillsCtrl"
-<h1>Performance</h1>
 
-<h2>Assessment of leadership skills</h2>
 
-<h2>Assessment of conduct</h2>
+
+
+
 

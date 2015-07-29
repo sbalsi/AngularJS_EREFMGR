@@ -21,7 +21,7 @@
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #009999;
+  background: #00A77F;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -128,13 +128,13 @@
     cursor:pointer;
   }
 
+  .body{
+    padding-top: 0px !important;
+  }
+
   /* Comment Text Box styling */
   .commentBox{
     height: 400px;
   }
-  /* Table inbox styling */
-  th {
-    background-color: #009999;
-    color: #293D3D;
-  }
+
 }
