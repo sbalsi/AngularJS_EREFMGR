@@ -23,12 +23,15 @@ angular.module('myApp.performance_view', ['ngRoute'])
 
     .controller('skillsCtrl', function($scope) {
       $scope.skills = [
-          {skill_id: 1, label: 'Existing and acquired professional knowledge', chapter: "dev_exp"},
-          {skill_id: 2, label: 'Existing and acquired professional skills', chapter: "dev_exp"},
-          {skill_id: 3, label: 'Practical implementation', chapter: "dev_exp"},
-          {skill_id: 4, label: 'Knowledge transfer', chapter: "dev_exp"},
-          {skill_id: 5, label: 'Diligent', chapter: "diligence_reliability"},
-          {skill_id: 6, label: 'Exact', chapter: "diligence_reliability"}
+          {skill_id: 1, label: 'Existing and acquired professional knowledge', chapter: "dev_exp", ratingChecked: false},
+          {skill_id: 2, label: 'Existing and acquired professional skills', chapter: "dev_exp", ratingChecked: false},
+          {skill_id: 3, label: 'Practical implementation', chapter: "dev_exp", ratingChecked: false},
+          {skill_id: 4, label: 'Knowledge transfer', chapter: "dev_exp", ratingChecked: false},
+          {skill_id: 5, label: 'Diligent', chapter: "diligence_reliability", ratingChecked: false},
+          {skill_id: 6, label: 'Exact', chapter: "diligence_reliability", ratingChecked: false},
+          {skill_id: 7, label: 'Careful', chapter: "diligence_reliability", ratingChecked: false},
+          {skill_id: 8, label: 'Reliable', chapter: "diligence_reliability", ratingChecked: false},
+          {skill_id: 9, label: 'Respect deadlines', chapter: "diligence_reliability", ratingChecked: false}
         ];
 
 

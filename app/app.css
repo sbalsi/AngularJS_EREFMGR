@@ -80,6 +80,7 @@
   height: 65px;
   font-size: 18px;
   line-height: 60px;
+  font-weight: bold;
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -111,6 +112,7 @@
   #page-content-wrapper {
     padding: 20px;
     position: relative;
+    padding-bottom: 200px;
   }
 
   #wrapper.toggled #page-content-wrapper {

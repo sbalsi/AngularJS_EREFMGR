@@ -28,7 +28,7 @@
 
 <div class="row" ng-controller="performanceCtrl">
     <div class="col-md-6">
-        <ul class="list-unstyled" ng-controller="evaluationCtrl">
+        <ul class="list-unstyled" ng-controller="skillsCtrl">
             <li>
                 <table class="table table-hover">
                     <thead>
@@ -39,11 +39,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Diligent</td>
-                        <td><input type="checkbox" ng-model="ratingCheckboxModel.value"></td>
+                    <tr ng-repeat="skill in skills" ng-if="skill.chapter=='diligence_reliability'">
+                        <td>{{skill.label}}</td>
+                        <td><input type="checkbox" ng-model="skill.ratingChecked"></td>
                         <td>
-                            <div id="radio_rating" ng-show="ratingCheckboxModel.value">
+                            <div id="radio_rating" ng-show="skill.ratingChecked">
                                 - <input type="radio" ng-model="radioRatingModel.rating" value="0">
                                 + <input type="radio" ng-model="radioRatingModel.rating" value="1">
                                 ++ <input type="radio" ng-model="radioRatingModel.rating" value="2">
@@ -61,7 +61,7 @@
     </div>
 
     <div class="col-md-6">
-        <textarea class="form-control" rows="3" ng-model="user.comment" placeholder="Rating"></textarea>
+        <textarea class="form-control" rows="8" ng-model="freetext_rating" placeholder="Rating" style="margin-top: 35px"></textarea>
     </div>
 
 </div>
