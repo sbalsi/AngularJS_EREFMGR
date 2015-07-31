@@ -8,9 +8,10 @@ angular.module('myApp', [
   'myApp.inbox_view',
   'myApp.user_tasks_view',
   'myApp.performance_view',
+  'myApp.restTest_view',
   'myApp.view3',
   'myApp.version',
-  'ui.multiselect'
+  'ui.multiselect',
 
 ]).
 config(['$routeProvider', function($routeProvider) {
