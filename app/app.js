@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
+  'ngResource',
   'mgcrea.ngStrap',
   'myApp.persData_tasks_employee',
   'myApp.inbox_view',
@@ -16,4 +17,11 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/inbox_view'});
-}]);
+}]).
+
+factory("CustomerFactory", function($resource){
+      return $resource("/RestTest/webresources/s.balsi.resttest.customer");
+    })
+
+
+;
