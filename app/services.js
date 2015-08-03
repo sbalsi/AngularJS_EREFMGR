@@ -2,14 +2,22 @@
  * Created by stefabal on 02.08.15.
  */
 
-angular.module('myApp.services', ['ngResource'])
-    .factory('AngularIssues', function($resource){
-        return $resource('https://api.github.com/repos/angular/angular.js/issues', {})
-    })
+var restServices = angular.module('myApp.services', ['ngResource']);
 
-    .factosry('CustomerService', function($resource){
-        return $resource('http://localhost:8080/RestTest/webresources/s.balsi.resttest.customer', {})
-    })
+restServices.factory('CustomerFactory', ['$resource',
+    function($resource){
+        return $resource('http://localhost:8080/Rest_Test/webresources/s.balsi.rest_test.customer', {},{
+            query: {
+                method: 'GET',
+                params:{},
+                isArray: true}
+        });
+    }]);
 
-;
+
+
+//http://movieapp-sitepointdemos.rhcloud.com/api/movies
+
+
+
 

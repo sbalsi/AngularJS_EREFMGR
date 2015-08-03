@@ -9,18 +9,21 @@ angular.module('myApp.restTest_view', ['ngRoute'])
       });
     }])
 
+.controller('restTestViewCtrl', ['$scope', 'CustomerFactory', function($scope, CustomerFactory) {
+    $scope.customers = CustomerFactory.query();
+}]);
+
+
     //Tutorial http://coder1.com/articles/consuming-rest-services-angularjs
-    .controller('restTestViewCtrl', ['$scope', 'AngularIssues', function($scope, AngularIssues, CustomerService) {
+    /*.controller('restTestViewCtrl', ['$scope', 'AngularIssues', function($scope, AngularIssues) {
         $scope.data = {};
 
         AngularIssues.query(function(response) {
             $scope.data.issues = response;
         });
 
-        AngularIssues.query(function(response){
-            $scope.data.customers = response;
-        })
-    }])
+
+    }])*/
 
 
 
@@ -28,4 +31,5 @@ angular.module('myApp.restTest_view', ['ngRoute'])
 
 
 
-;
+
+

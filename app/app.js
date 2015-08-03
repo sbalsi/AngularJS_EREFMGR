@@ -18,11 +18,14 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/inbox_view'});
-}]).
-
-factory("CustomerFactory", function($resource){
-      return $resource("/RestTest/webresources/s.balsi.resttest.customer");
-    })
-
-
+}])
+.config(['$resourceProvider', function($resourceProvider) {
+  // Don't strip trailing slashes from calculated URLs
+  $resourceProvider.defaults.stripTrailingSlashes = false;
+}])
 ;
+
+
+
+
+
