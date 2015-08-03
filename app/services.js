@@ -6,7 +6,7 @@ var restServices = angular.module('myApp.services', ['ngResource']);
 
 restServices.factory('CustomerFactory', ['$resource',
     function($resource){
-        return $resource('http://localhost:8080/Rest_Test/webresources/s.balsi.rest_test.customer', {},{
+        return $resource('http://localhost:8080/RestTest/webresources/customers', {},{
             query: {
                 method: 'GET',
                 params:{},
