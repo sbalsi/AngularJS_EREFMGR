@@ -1,0 +1,10 @@
+# pack-refs with: peeled fully-peeled 
+7da5ac5c270761ceef789fc957592bb12984b44b refs/heads/RestTest
+a07d70c3d8616a3e0fc50cb17301c24e8ea1c80d refs/heads/dev
+f096694add1fd78fb8c62ab75765b564218a02c8 refs/heads/hovercard
+df1754758002b0636131b08ee23a4bea84dcf594 refs/heads/inbox
+7da5ac5c270761ceef789fc957592bb12984b44b refs/heads/master
+b47f308056b6cb702f19ac3ad8dea60a680d0c65 refs/heads/move-bower
+f300fb5e417886fdccd975512bb2a23a1ee7156e refs/heads/performance
+822d5b22848b8985c886b0961f977965eeb0e727 refs/heads/personaldata
+9806336556ef99ecfccedb482b062981f7c09571 refs/heads/v0.10.x

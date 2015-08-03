@@ -13,6 +13,7 @@ angular.module('myApp', [
   'myApp.view3',
   'myApp.version',
   'ui.multiselect',
+  'myApp.services'
 
 ]).
 config(['$routeProvider', function($routeProvider) {
