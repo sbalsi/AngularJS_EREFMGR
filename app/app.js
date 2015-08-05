@@ -10,6 +10,7 @@ angular.module('myApp', [
   'myApp.user_tasks_view',
   'myApp.performance_view',
   'myApp.restTest_view',
+  'myApp.login_view',
   'myApp.view3',
   'myApp.version',
   'ui.multiselect',

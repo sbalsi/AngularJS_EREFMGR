@@ -15,16 +15,109 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="customer in customers">
-                <td>{{customer.customerId}}</td>
-                <td>{{customer.name}}</td>
-                <td>{{customer.email}}</td>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
             </tr>
             </tbody>
 
         </table>
     </div>
+</div>
 
+<div class="row">
+    <div class="col-md-12">
+        <h1>Get user by id</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <input type="text" class="form-control" ng-model="user.id">
+    </div>
+    <div class="col-md-6">
+        <button type="button"class="btn btn-primary" ng-click="getUserById(user.id)">Get User</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Selected user:</h2>
+        <p>User id: {{currentUser.id}}</p>
+        <p>User Name: {{currentUser.name}}</p>
+        <p>User Email: {{currentUser.email}}</p>
+    </div>
 
 </div>
 
+<div class="row">
+    <div class="col-md-12">
+        <h1>New User</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-primary" ng-click="addUser()">Add new user</button>
+    </div>
+</div>
+
+
+<!--
+<div class="row">
+    <div class="col-md-12">
+        <h2>New User</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form ng-submit="save(customer)">
+            User Id: <input type="text" class="form-control" ng-model="user.customerId">
+            Name: <input type="text" class="form-control" ng-model="customer.name">
+            Email: <input type="text" class="form-control" ng-model="customer.email">
+            <button type="button" ng-click="createNewCustomer()" class="btn btn-success">Save new customer</button>
+        </form>
+    </div>
+
+
+    <div class="col-md-12">
+        <p>Customer Id: {{customer.customerId}}</p>
+        <p>Name: {{customer.name}}</p>
+        <p>Email: {{customer.email}}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Get user by id </h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        Enter Id: <input type="text" class="form-control" ng-model="inputId">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th class="col-md-4">User id</th>
+                <th class="col-md-4">Name</th>
+                <th class="col-md-4">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{newCustomer.customerId}}</td>
+                <td>{{newCustomer.name}}</td>
+                <td>{{newCustomer.email}}</td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>-->
