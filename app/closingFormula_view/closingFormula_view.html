@@ -1,0 +1,126 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Closing Formula</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Reason for leaving</h2>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="reasonLeavingModel.rating" value="0"> Resignation
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="reasonLeavingModel.rating" value="1"> Dismissal
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <select class="form-control" ng-model="dismissalReasonModel" convert-to-number>
+            <option value="0">Economic reasons</option>
+            <option value="1">Reorganization</option>
+            <option value="2">Insufficient performance</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="reasonLeavingModel.rating" value="2"> Other
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <textarea class="form-control" rows="3" ng-model="dismissalReasonOtherModel"></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Regret and recommendation</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="regretRecommendationModel.rating" value="0"> We regret the departure
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="regretRecommendationModel.rating" value="1"> We very much regret the departure
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="regretRecommendationModel.rating" value="2"> We regret not to be able to offer a different position
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="regretRecommendationModel.rating" value="3"> We would not hesitate to reappoint him/her
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Thanks and best wishes for the future</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="thanksWishesModel.rating" value="0"> Thanks for the work
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="thanksWishesModel.rating" value="1"> Thanks for the valuable work
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="thanksWishesModel.rating" value="2"> Thanks for the excellent work
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <input type="radio" ng-model="thanksWishesModel.rating" value="3"> Best wishes for the future
+    </div>
+</div>
+
+
+<div class="row" style="margin-top: 50px">
+    <div class="col-md-12">
+        Doc Team Member
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-2">
+        <input class="form-control" type="text" ng-model="docTeamNameModel" placeholder="Enter Name">
+    </div>
+    <button type="button" class="btn btn-success" ng-klick="sendToDocTeam()">Send</button>
+    <button type="button" class="btn btn-success" ng-klick="submit()">Save</button>
+
+
+</div>

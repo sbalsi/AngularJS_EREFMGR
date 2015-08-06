@@ -11,6 +11,7 @@ angular.module('myApp', [
   'myApp.performance_view',
   'myApp.restTest_view',
   'myApp.login_view',
+  'myApp.closingFormula_view',
   'myApp.view3',
   'myApp.version',
   'ui.multiselect',
