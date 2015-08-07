@@ -64,12 +64,12 @@
     <div class="form-group">
         <label for="functions" class="col-sm-3 control-label"> Functions:</label>
         <div class="col-sm-3" id="functions">
-            <multiselection model="selectedUserIds" options="users"></multiselection>
+            <multiselection model="selectedUserNames" options="users"></multiselection>
         </div>
 
         <div class="col-sm-2">
             <ul>
-                <li data-ng-repeat="item in selectedUserIds">
+                <li data-ng-repeat="item in selectedUserNames">
                     {{ item }}
                 </li>
             </ul>

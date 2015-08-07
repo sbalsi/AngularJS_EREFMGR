@@ -23,7 +23,6 @@ app.directive('multiselection', function () {
         "<li class='divider'></li>" +
         "<li><a data-ng-click='inputFunctionEnabled=!inputFunctionEnabled;'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Add Function</a></li>"+
         "<li><input type='text' ng-show='inputFunctionEnabled'class='form-control' ng-model='functionInput'placeholder='Enter new function'></li>"+
-        "<li>Test: {{functionInput}} </li>"+
         "<li><a data-ng-click='saveNewFunction(functionInput);' ng-show='inputFunctionEnabled'><span class='glyphicon glyphicon-floppy-disk' aria-hidden='true'></span> Save new function</a></li>" +
         "<li class='divider'></li>" +
         "<li data-ng-repeat='option in options'><a data-ng-click='toggleSelectItem(option)'><span data-ng-class='getClassName(option)' aria-hidden='true'></span> {{option.name}}</a></li>" +
@@ -31,6 +30,22 @@ app.directive('multiselection', function () {
         "</div>",
 
         controller: function ($scope) {
+
+
+            $scope.saveNewFunction = function(functionInput){
+                console.log("Save new function btn clicked");
+
+                var functionName = functionInput;
+                var functionId = 5;
+
+
+                $scope.model.push(functionName);
+                $scope.options.push(
+                    {"id":5, "name":functionInput}
+                )
+
+
+            };
 
             $scope.openDropdown = function () {
 
@@ -42,9 +57,9 @@ app.directive('multiselection', function () {
 
                 $scope.model = [];
 
-                angular.forEach($scope.options, function (item, index) {
+                angular.forEach($scope.options, function (item) {
 
-                    $scope.model.push(item.id);
+                    $scope.model.push(item.name);
 
                 });
 
@@ -62,7 +77,7 @@ app.directive('multiselection', function () {
 
                 angular.forEach($scope.model, function (item, index) {
 
-                    if (item == option.id) {
+                    if (item == option.name) {
 
                         intIndex = index;
 
@@ -77,7 +92,7 @@ app.directive('multiselection', function () {
                 }
                 else {
 
-                    $scope.model.push(option.id);
+                    $scope.model.push(option.name);
 
                 }
 
@@ -89,7 +104,7 @@ app.directive('multiselection', function () {
 
                 angular.forEach($scope.model, function (item, index) {
 
-                    if (item == option.id) {
+                    if (item == option.name) {
 
                         varClassName = 'glyphicon glyphicon-ok green';
 

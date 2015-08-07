@@ -18,7 +18,7 @@ angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap', 'm
 
         ];
 
-        $scope.selectedUserIds = [1,2];
+        $scope.selectedUserNames = [];
 
       $scope.master = {};
 
