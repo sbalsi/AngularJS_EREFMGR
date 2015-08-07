@@ -11,14 +11,14 @@ angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap', 'm
 
 .controller('personalDataCtrl', ['$scope', function($scope) {
 
-        $scope.users = [
-            {"id": 1, "name": "Name1"},
-            {"id": 2, "name": "Name2"},
-            {"id": 3, "name": "Name3"}
+        $scope.functions = [
+            {"id": 1, "name": "Function 1"},
+            {"id": 2, "name": "Function 2"},
+            {"id": 3, "name": "Function 3"}
 
         ];
 
-        $scope.selectedUserNames = [];
+        $scope.selectedFunctionNames = [];
 
       $scope.master = {};
 

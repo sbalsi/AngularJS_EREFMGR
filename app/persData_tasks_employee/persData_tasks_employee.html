@@ -64,97 +64,82 @@
     <div class="form-group">
         <label for="functions" class="col-sm-3 control-label"> Functions:</label>
         <div class="col-sm-3" id="functions">
-            <multiselection model="selectedUserNames" options="users"></multiselection>
+            <multiselection model="selectedFunctionNames" options="functions"></multiselection>
         </div>
 
-        <div class="col-sm-2">
-            <ul>
-                <li data-ng-repeat="item in selectedUserNames">
+        <div class="col-sm-3">
+            <ul class="ul-functions">
+                <label>Selected Functions: </label>
+                <li data-ng-repeat="item in selectedFunctionNames">
                     {{ item }}
                 </li>
             </ul>
         </div>
     </div>
 
+    <div class="form-group">
+        <label for="departments" class="col-sm-3 control-label"> Deparments:</label>
+        <div class="col-sm-9">
+            <select class="form-control" ng-controller="departmentCtrl" ng-model="user.department" id="departments">
+                <option ng-repeat="department in departments">{{department.name}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="workQuota" class="col-sm-3 control-label"> Work quoata:</label>
+        <div class="col-sm-9">
+            <select ng-model="user.workquota" class="form-control" id="workQuota">
+                <option value="10">10%</option>
+                <option value="20">20%</option>
+                <option value="30">30%</option>
+                <option value="40">40%</option>
+                <option value="50">50%</option>
+                <option value="60">60%</option>
+                <option value="70">70%</option>
+                <option value="80">80%</option>
+                <option value="90">90%</option>
+                <option value="100">100%</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="workPlace" class="col-sm-3 control-label"> Place of work:</label>
+        <div class="col-sm-9">
+            <select ng-model="user.workplace" class="form-control" ng-controller="workPlaceCtrl" id="workPlace">
+                <option ng-repeat="workPlace in workPlaces">{{workPlace.name}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="commentsInput" class="col-sm-3 control-label"> Comments:</label>
+        <div class="col-sm-9">
+            <textarea class="form-control" rows="3" ng-model="user.comment" id="commentsInput"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-sm-offset-3 col-sm-1">
+            <input type="submit" class="btn btn-default" ng-click="update(user)" value="Save" />
+        </div>
+
+        <div class="col-sm-1">
+            <a class="btn btn-default" href="#user_tasks_view" role="button">Tasks</a>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <pre>form = {{user | json}}</pre>
+        <pre>master = {{master | json}}</pre>
+    </div>
+
+
+
 </form>
 
 
-<div ng-controller="personalDataCtrl">
-    <form novalidate class="simple-form">
-        Title:
-        <select class="form-control" ng-model="user.title">
-            <option value="Interim Employment Reference">Interim Employment Reference</option>
-            <option value="Employment Reference">Employment Reference</option>
-            <option value="Internship reference">Internship reference</option>
-            <option value="Apprenticeship certificate">Apprenticeship certificate</option>
-            <option value="Evidence of employment">Evidence of employment</option>
-        </select>
-        Last Name: <input type="text" class="form-control" ng-model="user.lastName" />
-        First Name: <input type="text" class="form-control" ng-model="user.firstName"/>
-        E-mail: <input type="email" class="form-control" ng-model="user.email" />
-        Gender: <input type="radio" ng-model="user.gender" value="male" />male
-                <input type="radio" ng-model="user.gender" value="female" />female<br/>
-        Employment duration:
-        <div class="form-inline">
-            <input type="text" class="form-control" ng-model="user.fromDate" data-max-date="{{user.untilDate}}" placeholder="From" bs-datepicker>
-            <input type="text" class= "form-control" ng-model="user.untilDate" data-min-date="{{user.fromDate}}" placeholder="Until" bs-datepicker>
-        </div>
 
-        Functions:
-        <div ng-controller="functionCtrl" class="form-inline">
-            <multiselect class="input-xlarge" class ="form-control" multiple="true" ms-selected ="There are {{selectedFunction.length}} functions(s) selected"
-                         ng-model="selectedFunction" ms-header="Select Functions"
-                         options="c.name for c in functions"
-                         change="selected()">
-            </multiselect>
-
-            <input type="text" class="form-control" ng-model="newFunction.name" placeholder="Enter Function">
-            <button ng-click="addFunction()" class="btn btn-default">Add Function</button>
-
-            <div class="well well-sm" class="form-control">
-            {{selectedFunction}}
-            </div>
-        </div>
-
-        Departments:
-        <select class="form-control" ng-controller="departmentCtrl" ng-model="user.department">
-            <option ng-repeat="department in departments">{{department.name}}</option>
-        </select>
-
-        Work quota:
-        <select ng-model="user.workquota" class="form-control">
-            <option value="10">10%</option>
-            <option value="20">20%</option>
-            <option value="30">30%</option>
-            <option value="40">40%</option>
-            <option value="50">50%</option>
-            <option value="60">60%</option>
-            <option value="70">70%</option>
-            <option value="80">80%</option>
-            <option value="90">90%</option>
-            <option value="100">100%</option>
-        </select>
-
-        Place of work:
-        <select ng-model="user.workplace" class="form-control" ng-controller="workPlaceCtrl">
-            <option ng-repeat="workPlace in workPlaces">{{workPlace.name}}</option>
-        </select>
-
-        Comments:
-        <textarea class="form-control" rows="3" ng-model="user.comment"></textarea>
-
-
-        <br/>
-        <div class="form-inline">
-            <input type="submit" class="btn btn-default" ng-click="update(user)" value="Save" />
-            <a class="btn btn-default" href="#user_tasks_view" role="button">Tasks</a>
-
-        </div>
-
-
-    </form>
-
-    <pre>form = {{user | json}}</pre>
-    <pre>master = {{master | json}}</pre>
-</div>
 

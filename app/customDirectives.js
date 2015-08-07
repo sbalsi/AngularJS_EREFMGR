@@ -36,7 +36,7 @@ app.directive('multiselection', function () {
                 console.log("Save new function btn clicked");
 
                 var functionName = functionInput;
-                var functionId = 5;
+
 
 
                 $scope.model.push(functionName);
