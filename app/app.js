@@ -15,18 +15,17 @@ angular.module('myApp', [
     'myApp.docTeam_view',
     'myApp.view3',
     'myApp.version',
-    'ui.multiselect',
-    'myApp.services'
+    'myApp.services',
+    'myApp.customDirectives'
 
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/inbox_view'});
-}])
-.config(['$resourceProvider', function($resourceProvider) {
-  // Don't strip trailing slashes from calculated URLs
-  $resourceProvider.defaults.stripTrailingSlashes = false;
-}])
-;
+])
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider.otherwise({redirectTo: '/inbox_view'});
+    }])
+    .config(['$resourceProvider', function($resourceProvider) {
+    // Don't strip trailing slashes from calculated URLs
+        $resourceProvider.defaults.stripTrailingSlashes = false;
+    }]);
 
 
 

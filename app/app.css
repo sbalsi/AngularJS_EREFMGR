@@ -147,3 +147,7 @@
 #saveBtn {
   margin-top: 20px;
 }
+ul.dropdown-menu li {
+  cursor: pointer;
+}
+

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap', 'ui.multiselect'])
+angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap', 'myApp.customDirectives'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/persData_tasks_employee', {
@@ -10,6 +10,16 @@ angular.module('myApp.persData_tasks_employee', ['ngRoute', 'mgcrea.ngStrap', 'u
 }])
 
 .controller('personalDataCtrl', ['$scope', function($scope) {
+
+        $scope.users = [
+            {"id": 1, "name": "Name1"},
+            {"id": 2, "name": "Name2"},
+            {"id": 3, "name": "Name3"}
+
+        ];
+
+        $scope.selectedUserIds = [1,2];
+
       $scope.master = {};
 
       $scope.update = function(user) {
