@@ -37,19 +37,19 @@ restServices.factory('UserService', function($resource){
     return data;
     });
 
-restServices.factory('LoginService', function($resource){
-   //todo
-});
+restServices.factory('authFactory', ['$rootScope', '$http', function ($rootScope, $http) {
 
-/*restServices.factory('CustomerGetByIdFactory', function($resource){
-    return $resource('http://localhost:8080/RestTest/webresources/customers/:id',{},{
-        get:{
-            method: 'GET',
-            params:{},
-            isArray: false
-        }
-    })
-});*/
+    var authFactory = {
+        authData: undefined
+    };
+
+    authFactory.login = function (user) {
+        return $http.post('http://localhost/api/auth/', user);
+    };
+
+    return authFactory;
+}]);
+
 
 
 

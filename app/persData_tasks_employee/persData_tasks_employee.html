@@ -1,5 +1,73 @@
 <h2>Personal Data</h2>
 
+
+<form ng-controller="personalDataCtrl" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="Title" class="col-sm-3 control-label"> Title:</label>
+        <div class="col-sm-9">
+            <select class="form-control" ng-model="user.title" id="Title" placeholer="Select Title">
+                <option value=''>Select Title</option>
+                <option value="Interim Employment Reference">Interim Employment Reference</option>
+                <option value="Employment Reference">Employment Reference</option>
+                <option value="Internship reference">Internship reference</option>
+                <option value="Apprenticeship certificate">Apprenticeship certificate</option>
+                <option value="Evidence of employment">Evidence of employment</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputLastName" class="col-sm-3 control-label"> Last Name:</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputFirstName" class="col-sm-3 control-label"> First Name:</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-3 control-label"> Email:</label>
+        <div class="col-sm-9">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="gender" class="col-sm-3 control-label"> Gender:</label>
+        <div class="col-sm-9" id="gender">
+            <div class="radio-inline">
+                <input type="radio" ng-model="user.gender" value="male"> Male
+            </div>
+            <div class="radio-inline">
+                <input type="radio" ng-model="user.gender" value="female"> Female
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="emplDuration" class="col-sm-3 control-label"> Employment duration:</label>
+        <div class="col-sm-2" id="emplDuration">
+            <input type="text" class="form-control" ng-model="user.fromDate" data-max-date="{{user.untilDate}}" placeholder="From" bs-datepicker>
+        </div>
+
+        <div class="col-sm-2">
+            <input type="text" class= "form-control" ng-model="user.untilDate" data-min-date="{{user.fromDate}}" placeholder="Until" bs-datepicker>
+        </div>
+    </div>
+
+    <div class="form-group" ng-controller="functionCtrl">
+        <label for="functions" class="col-sm-3 control-label"> Functions:</label>
+    </div>
+
+</form>
+
+
 <div ng-controller="personalDataCtrl">
     <form novalidate class="simple-form">
         Title:
@@ -26,7 +94,8 @@
             <multiselect class="input-xlarge" class ="form-control" multiple="true" ms-selected ="There are {{selectedFunction.length}} functions(s) selected"
                          ng-model="selectedFunction" ms-header="Select Functions"
                          options="c.name for c in functions"
-                         change="selected()"></multiselect>
+                         change="selected()">
+            </multiselect>
 
             <input type="text" class="form-control" ng-model="newFunction.name" placeholder="Enter Function">
             <button ng-click="addFunction()" class="btn btn-default">Add Function</button>
